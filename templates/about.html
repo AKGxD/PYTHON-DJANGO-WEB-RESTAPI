@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>About</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+
+body{
+  background-color: #1b1b1b;
+}
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+ margin: 0px 4px 0px 2px;
+  box-shadow: 1px 1px 1px 1px rgb(56, 53, 53) ;
+  background: #0E0B16;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #ff3c00;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #ff3c00;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #ff3c00;
+  background: GREY;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+   
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    color: #ff3c00;
+  background: rgb(63, 60, 60);
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b162bbd;
+}
+
+.titlea{
+  font-family: "Raleway", sans-serif;
+  color:white;
+  text-align: center;
+}
+
+.h2x{
+  font-family: "Raleway", sans-serif;
+  color:white;
+}
+.p1{
+  font-family: "Raleway", sans-serif;
+  color:white;
+}
+.devn{
+  font-family: "Raleway", sans-serif;
+  color:white;
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(196, 155, 155, 0.2);
+  transition: 0.3s;
+  
+  padding: 10px;
+}
+
+      </style>
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            AKG  Tech Blogs
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="#">Tools&Res</a></li>
+            <li><a href="{% url 'news'%}">Tech News</a></li>
+            <li><a href="{% url 'about'%}">About</a></li>
+         </ul>
+      </nav>
+      <div class="content">
+   <div  class="card">
+    <h1 class="titlea">ABOUT ME & PROJECT</h1>
+   
+    <h2 class="h2x"> REST-API Framework.</h2>
+<p class="p1"> A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer and was created by computer scientist Roy Fielding.</p> <br>
+    <h2 class="h2x">Django-Web Framework.</h2>
+    <p class="p1">
+      Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.</p> <br>
+     <h2 class="h2x">Ridiculously fast.</h2>
+     <p class="p1">Django was designed to help developers take applications from concept to completion as quickly as possible.</p> <br>
+     <h2 class="h2x"> Reassuringly secure.</h2>
+     <p class="p1">Django takes security seriously and helps developers avoid many common security mistakes.</p><br>
+     <h2 class="h2x">Exceedingly scalable.</h2>
+     <p class="p1"> Some of the busiest sites on the web leverage Django’s ability to quickly and flexibly scale.</p> <br>
+  
+    <br>
+    <div><h4 class="devn">DevEloped by ANISH</h4> </div> <br>
+   </div>
+   </div>
+
+
+
+   </body>
+</html>
